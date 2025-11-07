@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tree Soul Genesis | Whitepaper v1.0 (2025)</title>
+  <link rel="icon" href="https://i.imgur.com/iUr2uWb.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ccffdd;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #001a00, #000);
+      background-size: 200% 200%;
+      animation: breathe 10s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .particle {
+      position: absolute;
+      background: rgba(0, 255, 100, 0.25);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      50% { transform: translateY(-100px) scale(1.4); opacity: 0.2; }
+      100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    }
+    .container {
+      max-width: 950px;
+      margin: 100px auto;
+      background: rgba(0, 60, 0, 0.3);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 0 30px #00ff99;
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+    .logo-wrapper {
+      width: 110px;
+      height: 110px;
+      animation: spin 20s linear infinite;
+      transition: transform 0.6s ease;
+    }
+    .logo-wrapper:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 30px #00ff99);
+    }
+    .logo-wrapper img {
+      width: 100%;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 20px #00ff99);
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    h1 {
+      color: #00ff99;
+      text-shadow: 0 0 20px #00ff99;
+      font-size: 2.3em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #80ffaa;
+      text-shadow: 0 0 10px #00ffcc;
+      margin-top: 40px;
+      border-left: 5px solid #00ff99;
+      padding-left: 10px;
+    }
+    p, li { font-size: 1.05em; line-height: 1.8; }
+    ul { list-style: none; padding-left: 0; }
+    ul li::before { content: "🌿 "; }
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px 10px 0 0;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #00ff99, #00ffaa);
+      color: #001a00;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 15px #00ff99;
+      transition: all 0.3s;
+    }
+    a.button:hover {
+      background: linear-gradient(90deg, #66ffaa, #33ffcc);
+      box-shadow: 0 0 25px #33ffcc;
+    }
+    footer {
+      text-align: center;
+      margin: 60px 0 20px;
+      font-size: 0.9em;
+      color: #88ffcc;
+    }
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .socials a img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ff99;
+      background-color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .socials a img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px #00ffaa;
+    }
+    #sound-toggle {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: rgba(0, 255, 100, 0.2);
+      border: 2px solid #00ff99;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #00ff99;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px #00ff99;
+    }
+    #sound-toggle:hover {
+      background: rgba(0, 255, 100, 0.4);
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #33ffcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  <div class="container">
+    <header>
+      <div class="logo-wrapper">
+        <img src="https://i.imgur.com/iUr2uWb.png" alt="TSG Logo" />
+      </div>
+      <h1>Tree Soul Genesis (TSG)</h1>
+    </header>
+
+    <h2>Official Whitepaper v1.0 — 2025</h2>
+    <p><b>Abstract:</b> Tree Soul Genesis (TSG) connects blockchain with environmental regeneration — every transaction helps our planet grow greener.</p>
+
+    <h2>Vision</h2>
+    <p>“Green blockchain solutions empowering people to shape an eco-friendly digital future.”</p>
+
+    <h2>Technology & Blockchain</h2>
+    <p>Built on the Polygon network, ensuring scalability, speed, and minimal energy use — a true green chain.</p>
+
+    <h2>Tokenomics</h2>
+    <ul>
+      <li>Liquidity Pool — 40%</li>
+      <li>Community & Airdrop — 25%</li>
+      <li>Development & Partnerships — 15%</li>
+      <li>Team & Advisors — 10%</li>
+      <li>Reserve & Sustainability Fund — 10%</li>
+    </ul>
+
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Q1 2025 — Concept & Whitepaper</li>
+      <li>Q2 2025 — Smart Contract + Audit</li>
+      <li>Q3 2025 — Token Launch + Tree NFT</li>
+      <li>Q4 2025 — Staking + DAO Voting</li>
+    </ul>
+
+    <a class="button" href="Tree_Soul_Genesis_Whitepaper_v1_2025_Full.pdf" download>📄 Download PDF</a>
+    <a class="button" href="https://treesoulgenesis-cell.github.io/TSG-WEBSITE-FINALLY-/">🌐 Back to Website</a>
+  </div>
+
+  <footer>
+    <div class="socials">
+      <a href="https://discord.gg/"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"></a>
+      <a href="https://t.me/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></a>
+      <a href="https://instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+      <a href="https://x.com/"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png"></a>
+      <a href="https://facebook.com/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+    </div>
+    © 2025 Tree Soul Genesis — Built on Polygon | Green Blockchain Revolution
+  </footer>
+
+  <div id="sound-toggle">🎧</div>
+  <audio id="forest-audio" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2021/09/01/audio_9cb3cbe3c9.mp3?filename=forest-nature-sound-ambient-7479.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      const size = Math.random() * 6 + 3;
+      p.style.width = `${size}px`;
+      p.style.height = `${size}px`;
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.top = `${Math.random() * 100}%`;
+      p.style.animationDelay = `${Math.random() * 6}s`;
+      container.appendChild(p);
+    }
+
+    const soundToggle = document.getElementById('sound-toggle');
+    const audio = document.getElementById('forest-audio');
+    let isPlaying = false;
+    soundToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        soundToggle.style.color = '#00ff99';
+      } else {
+        audio.play();
+        soundToggle.style.color = '#33ffcc';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
